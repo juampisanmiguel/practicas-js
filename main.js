@@ -1,122 +1,112 @@
-//FIZZBUZZ
-for (let i = 1; i <= 100; i ++){
-    if (i % 5==0 && i % 3==0) {
-        console.log("FizzBuzz")
+//Defino mi clase constructora
+class producto {
+    constructor (nombre, categoria, marca, precio, estado, disponibilidad){
+        this.nombre=nombre;
+        this.categoria=categoria;
+        this.marca=marca;
+        this.precio=precio;
+        this.estado=estado;
+        this.disponibilidad=disponibilidad;
     }
-    else if (i % 3==0){
-         console.log("Fizz")
+    //Metodo para habilitar stock
+    habilitar(){
+        let error="Producto disponible"
+        if(this.disponibilidad!=true){
+            this.disponibilidad=true
+        } else {
+            console.log(error)
         }
-    else if (i % 5==0){
-         console.log("Buzz")
+    }
+
+    //Metodo para deshabilitar stock
+    deshabilitar(){
+        let error="Producto no disponible"
+        if(this.disponibilidad!=false){
+            this.disponibilidad=false
+        } else {
+            console.log(error)
         }
-    else {
-        console.log (i)
     }
 }
 
-//Practica clase 2
 
-// let nombre = prompt("Ingresa tu nombre")
-// let edad = parseInt(prompt("Ingresa tu edad"));
-
-// if (edad >= 18 && edad < 21){
-//     alert ("Bienvenido " + nombre + " podes ingresar al bar pero no tomar alcohol")
-// } else if  (edad >= 21){
-//     alert ("Bienvenido al bar " + nombre + " esperamos que disfrutes un buen trago")
-// } else {
-//     alert ("Sos menor de edad, no podes ingresar")
-// }
+//Creo el array
+const productosVintage = []
 
 
-//Mostrar tabla de multiplicar de un numero
-
-let number = parseInt(prompt("Ingresa un numero del 1 al 10:"))
-for (let i=1; i<=10; i++){
-    console.log(number*i)
-}
-
-//-----------------HASTA ACA PUSHEE EN GIT-----------------------//
-
-//Numero Par o impar (sacado de pledu)
-
-let i = parseInt(prompt("Ingresa un numero"))
-if (i%2===0){
-    console.log("Tu numero es par")
-} else {
-    console.log("Tu numero es impar")
-}
+//Defino mis productos
+let producto1= new producto("Remera pocket tee", "Remeras", "Nike", 7500, "Semi-nuevo", true)
+let producto2= new producto("Remera three stripes", "Remeras", "Adidas", 6200, "Nuevo", true)
+let producto3= new producto("Buzo anorak", "Buzos", "Undefined", 12000, "Usado", false)
+let producto4= new producto("Buzo batik", "Buzos", "Roberto Sanchez", 17500, "Nuevo", true)
+let producto5= new producto("Campera big logo", "Camperas", "Nike", 13100, "Usado", false)
+let producto6= new producto("Parka polar", "Camperas", "John Cook", 27500, "Nuevo", true)
+let producto7= new producto("Vans old skool", "Zapatillas", "Vans", 17500, "Semi-nuevo", true)
+let producto8= new producto("Air max 97", "Zapatillas", "Nike", 12800, "Usado", true)
+let producto9= new producto("Gorra ski", "Accesorios", "Polo", 5500, "Usado", false)
+let producto10= new producto("Riñonera bicolor", "Accesorios", "Bensimon", 11100, "Nuevo", true)
+let producto11= new producto("Cargo militar", "Pantalones", "Cacharel", 12560, "Usado", true)
+let producto12= new producto("Jean boyfriend", "Pantalones", "Bensimon", 10000, "Nuevo", false)
 
 
-//Adivina el numero (sacado de pledu)
-    let numeroSecreto = 14
-    let numeroUsuario = parseInt(prompt("Cual es el numero secreto? (recorda que es del 1 al 20)"))
+//Pusheo los productos al array
+productosVintage.push(producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10, producto11, producto12)
 
-    if (numeroUsuario<numeroSecreto){
-        console.log("El numero elegido es mas chico que el secreto")
-    } else if (numeroUsuario>numeroSecreto){
-        console.log("El numero elegido es mas grande que el secreto")
-    } else {
-        console.log("Felicitaciones! Adivinaste el numero")
+
+//Muestro los productos
+console.table(productosVintage);
+
+
+//Llamo al metodo para habilitar stock en el producto 3
+producto3.habilitar()
+
+
+//Llamo al metodo para deshabilitar stock en el producto 1
+producto1.deshabilitar()
+
+
+//Aplico filter para imprimir los productos que se encuentran disponibles
+let stockDisponible = productosVintage.filter(producto=>producto.disponibilidad==true)
+//Muestro todos los productos que cuento con stock en mi sitio
+console.table(stockDisponible)
+
+//Aplico filtro para que me imprima los productos con un precio mayor a 12.000
+let precioMayor12000 = productosVintage.filter(producto=>producto.precio>=12000)
+//Muestro estos productos
+console.table(precioMayor12000)
+
+
+//Creo un map para incrementar en un 21% el precio de mis productos
+let precioConIva = productosVintage.map((producto)=> {
+    return {
+        nombre: producto.nombre,
+        precio: producto.precio*1.21
     }
+})
+//Muestro los productos con IVA
+console.table(precioConIva)
 
 
-//¿Puedo jubilarme? (sacado de pledu)
+//Creo una funcion para agregar productos
 
-let genero = prompt("Sos hombre o mujer?").toLowerCase()
-let edad = parseInt(prompt("Que edad tenes?"))
+function agregarProducto(){
+    let nombreNuevoProducto=prompt("Ingresa el nombre del nuevo producto:")
+    let categoriaNuevoProducto=prompt("A que categoria pertenece?")
+    let marcaNuevoProducto=prompt("Ingresa la marca:")
+    let precioNuevoProducto=Number(prompt("Ingresa el precio"))
+    let estadoNuevoProducto=prompt("Ingresa el estado en el que se encuentra")
+    let disponibilidadNuevoProducto=confirm("Ingresa si esta disponible")
 
-if ((genero==="hombre" && edad >= 65) || (genero==="mujer" && edad >= 60)){
-    alert ("Te podes jubilar")
-} else {
-    alert("Todavia no estas en edad de jubilarte")
+    let productoNuevo = new producto(nombreNuevoProducto, categoriaNuevoProducto, marcaNuevoProducto, precioNuevoProducto, estadoNuevoProducto, disponibilidadNuevoProducto)
+
+    productosVintage.push(productoNuevo)
+    console.table(productosVintage)
 }
 
-//------------------EJERCICIOS WHILE------------------
+//Creo un ciclo para agregar cuantos productos yo desee
 
-//Mi primer bot (sacado de pledu)
-
-let mesa = 1
-let clientes = 20
-
-while (mesa <= clientes){
-    console.log("Bienvenidx! Su mesa es la", mesa)
-    mesa++
-}
-
-//Par o impar
-
-let n = parseInt(prompt("Ingresa un numero"))
-while (n>0){
-if (n%2===0){
-    console.log("El numero elegido es par")
-} else if (n%2===1){
-    console.log("El numero elegido es impar")
-} n=parseInt(prompt("Volve a elegir otro numero"))
- }
- console.log("El numero elegido es incorrecto")
-
- //contarDeA_n (sacado de pledu)
-
- function contarDeA_n(contar_de_a, contar_hasta){
-    let i = 1 
-    while (i<=contar_hasta){
-      console.log(i)
-      i+=contar_de_a
-    }
-  }
-  
-  contarDeA_n(3,50)
-
-//Factorial (En este ejercicio, deberás crear una Función factorial que reciba un número y devuelva el factorial de este número.)
-const factorial = (numero) => {
-    let contador = 1
-    let resultado = 1
-    if (numero===1 || numero===0){
-        return resultado
-    } else {
-        while (contador<=numero){
-            resultado*=contador
-            contador++
-        } return resultado
-    }
+let cargarOtroProducto = confirm("Desea agregar un producto?")
+while (cargarOtroProducto!=false){
+    agregarProducto()
+    cargarOtroProducto = confirm("Queres seguir agregando productos?")
 }
