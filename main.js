@@ -70,7 +70,7 @@ const cargarEventos=()=>{
          if(prod){
             prod.cantidad++
          }else{
-            const prod= cart.find(product=>product.id == button.id);
+            const prod= productos.find(product=>product.id == button.id);
             if(prod){
                 let newProduct={
                     id: prod.id,
