@@ -85,7 +85,7 @@ const cargarEventos=()=>{
                 cart.push(newProduct);
             }
          }
-            updateCart(cart);
+            updateCart(cart);            
         });
     }
 }
@@ -104,9 +104,9 @@ const cargarProductos=(productos)=>{
         `;
         container.appendChild(div);
     }
-    //Cargo los eventos - addEventListener
-
+    cargarEventos()
 }
+
 
 cargarProductos(productos);
 
