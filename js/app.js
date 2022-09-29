@@ -19,16 +19,18 @@ const datosCompletos = ()=> {
         return false
     }
 }
-//REALIZO COTIZACION
-const realizarCotizacion = () => {
-    if (datosCompletos()){
-        const valorCotizado = new Cotizador(metros2.value, propiedad.value, ubicacion.value, costoM2)
-            importe.innerText = valorCotizado.cotizar()
-            btnEnviar.classList.remove("ocultar")
-    } else {
-        alert ("⚠️ Te quedaron datos sin completar!")
-    }
+
+const cotizo = () => {
+    const valorCotizado = new Cotizador(metros2.value, propiedad.value, ubicacion.value, costoM2)
+        importe.innerText = valorCotizado.cotizar()
+        btnEnviar.classList.remove("ocultar")
 }
+
+
+
+const realizarCotizacion = () => datosCompletos() ? cotizo() : alert ("⚠️ Te quedaron datos sin completar!")
+
+
 
 const enviarPorEmail = () =>{
     const cotizacion = {
