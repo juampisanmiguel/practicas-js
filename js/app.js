@@ -28,7 +28,12 @@ const cotizo = () => {
 
 
 
-const realizarCotizacion = () => datosCompletos() ? cotizo() : alert ("⚠️ Te quedaron datos sin completar!")
+const realizarCotizacion = () => datosCompletos() ? cotizo() : Swal.fire({
+    icon: 'error',
+    title: 'Cuidado!',
+    text: 'Te quedaron datos sin completar',
+    footer: 'Corrobora bien todo antes de cotizar'
+  })
 
 
 
@@ -41,7 +46,12 @@ const enviarPorEmail = () =>{
         tasacion: importe.innerText
     }
     localStorage.setItem("Ultima cotizacion", JSON.stringify(cotizacion))
-    alert("Tasacion enviada, muchas gracias por confiar en nosotros")
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Tasacion enviada, gracias por confiar en nosotros',
+        timer: 3000
+      })
     btnEnviar.classList.add("ocultar")
 }
 
