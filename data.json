@@ -1,0 +1,59 @@
+[
+    {
+        "id":1,
+        "name": "Buzo Nike bicolor",
+        "price": "15.000",
+        "description": "nike-bicolor",
+        "image": "images/nike.jpg"
+    },
+    {
+        "id":2,
+        "name": "Buzo adidas ice hockey",
+        "price": "11.500",
+        "description": "ice-hockey",
+        "image": "images/adidas.jpg"
+    },
+    {
+        "id":3,
+        "name": "Campera big logo",
+        "price": "21.890",
+        "description": "big-logo",
+        "image": "images/tommy.jpg"
+    },
+    {
+        "id":4,
+        "name": "Mochila Polo Sport",
+        "price": "14.000",
+        "description": "mochila-polo",
+        "image": "images/mochila.jpeg"
+    },
+    {
+        "id":5,
+        "name": "Pantalon cargo",
+        "price": "7.000",
+        "description": "cargo-camo",
+        "image": "images/cargo.jpeg"
+    },
+    {
+        "id":6,
+        "name": "Short bulls",
+        "price": "8.700",
+        "description": "bulls-pants",
+        "image": "images/bulls.webp"
+    },
+    {
+        "id":7,
+        "name": "Buzo arquero",
+        "price": "9.900",
+        "description": "goicoechea-arquero",
+        "image": "images/goico.webp"
+    },
+    {
+        "id":8,
+        "name": "Retro sunglasses",
+        "price": "10.000",
+        "description": "retro-gafas",
+        "image": "images/gafas.jpg"
+    }
+
+]
