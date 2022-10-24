@@ -15,7 +15,7 @@
     },
     {
         "id":3,
-        "name": "Campera big logo",
+        "name": "Campera retro Tommy",
         "price": "21890",
         "description": "big-logo",
         "image": "images/tommy.jpg"
@@ -32,7 +32,7 @@
         "name": "Pantalon cargo",
         "price": "7000",
         "description": "cargo-camo",
-        "image": "images/cargo.jpeg"
+        "image": "images/cargo.jpg"
     },
     {
         "id":6,
@@ -46,7 +46,7 @@
         "name": "Buzo arquero",
         "price": "9900",
         "description": "goicoechea-arquero",
-        "image": "images/goico.webp"
+        "image": "images/arquero.jpg"
     },
     {
         "id":8,

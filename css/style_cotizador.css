@@ -15,7 +15,7 @@ html {
 
 h1 {
     font-weight: 400;
-    color:  rgb(138, 43, 226);
+    color:  rgb(160, 105, 4);
 }
 
 label {
@@ -43,7 +43,7 @@ select, input {
 }
 
 .importe {
-    color: rgb(138, 43, 226);
+    color: rgb(160, 105, 4);
     font-size: x-large;
     font-weight: 700;
 }
@@ -60,7 +60,7 @@ select, input {
 
 button:hover {
     color: whitesmoke !important;
-    background-color: blueviolet !important;
+    background-color: rgb(160, 105, 4) !important;
 }
 
 button:active {

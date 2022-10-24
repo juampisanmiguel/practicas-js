@@ -1,12 +1,12 @@
 class Cotizador {
-    constructor(m2, factorPropiedad, factorUbicacion, costoFijo){
-        this.m2 = parseInt(m2)
-        this.factorPr = parseFloat(factorPropiedad)
-        this.factorUb = parseFloat(factorUbicacion)
+    constructor(cF, factorPrenda, factorMarca, costoFijo){
+        this.cF = parseInt(cF)
+        this.factorPr = parseFloat(factorPrenda)
+        this.factorMa = parseFloat(factorMarca)
         this.costoFijo = parseFloat(costoFijo)
     }
     cotizar(){
-        let resultado = (this.m2 * this.factorPr * this.factorUb * this.costoFijo)
+        let resultado = (this.cF * this.factorPr * this.factorMa * this.costoFijo)
         return resultado.toFixed(2)
     }
 }

@@ -41,7 +41,7 @@ const enviarPorEmail = () =>{
         tasacion: importe.innerText
     }
     localStorage.setItem("Ultima cotizacion", JSON.stringify(cotizacion))
-    alert("Tasacion enviada, muchas gracias por confiar en nosotros")
+    alert("Cotizacion de prenda realizada, gracias por elegirnos")
     btnEnviar.classList.add("ocultar")
 }
 
